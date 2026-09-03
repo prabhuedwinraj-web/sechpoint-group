@@ -1,8 +1,15 @@
 import React from 'react'
 import { st, ACCENT } from './ui.js'
 import { Link } from './router.jsx'
-import { Header, Footer } from './Shared.jsx'
+import { Header, Footer, ImagePlaceholder } from './Shared.jsx'
 import SechPointField from './hero-field.jsx'
+
+const ECO = [
+  { n: '01', short: 'DPI', tag: 'Digital public infrastructure', url: 'https://dpi.sechpoint.com' },
+  { n: '02', short: 'Distribution', tag: 'Cybersecurity distribution', url: 'https://distribution.sechpoint.com' },
+  { n: '03', short: 'SSIT', tag: 'Security & systems integration', url: 'https://ssit-theta.vercel.app/' },
+  { n: '04', short: 'ICT', tag: 'Enterprise technology & infrastructure', url: 'https://ict.sechpoint.com' },
+]
 
 const BIZ = [
   { n: '01', name: 'SechPoint DPI', sub: 'Digital Public Infrastructure', url: 'https://dpi.sechpoint.com',
@@ -85,19 +92,29 @@ export default function Home() {
               <p style={st('margin:16px 0 0;color:rgba(242,245,250,0.62);font-size:17px;line-height:1.7;text-wrap:pretty')}>With operations across the Middle East, Africa and Asia, SechPoint combines global technologies, regional understanding and local execution to support complex transformation requirements.</p>
               <a href="#about" className="sp-link" style={st(`display:inline-flex;align-items:center;gap:8px;margin-top:28px;color:${ACCENT};font-weight:600;font-size:16px`)}>Discover SechPoint Group <span aria-hidden="true">→</span></a>
             </div>
-            <div aria-hidden="true" style={st('display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative')}>
-              <div style={st(`grid-column:1 / -1;border:1px solid rgba(0,186,235,0.4);border-radius:14px;padding:20px 22px;background:rgba(0,186,235,0.06);display:flex;align-items:center;gap:12px`)}>
-                <span style={st(`width:22px;height:22px;border:1.5px solid ${ACCENT};display:grid;place-items:center;border-radius:5px;flex:none`)}><span style={st(`width:7px;height:7px;background:${ACCENT};border-radius:2px`)}></span></span>
-                <span style={st('font-family:Funnel Display,sans-serif;font-weight:600;font-size:15px')}>SechPoint Group</span>
-                <span style={st('margin-left:auto;color:rgba(242,245,250,0.42);font-size:13px')}>Est. 2020 · Dubai, UAE</span>
-              </div>
-              <div style={st('grid-column:1 / -1;display:flex;justify-content:center')}><span style={st('width:1px;height:26px;background:linear-gradient(180deg, rgba(0,186,235,0.6), rgba(255,255,255,0.1))')}></span></div>
-              {[['DPI', 'Digital public infrastructure'], ['Distribution', 'Cybersecurity distribution'], ['SSIT', 'Security & systems integration'], ['ICT', 'Enterprise technology & infrastructure']].map(([t, d]) => (
-                <div key={t} style={st('border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:18px 20px;background:rgba(255,255,255,0.02)')}>
-                  <span style={st('font-family:Funnel Display,sans-serif;font-weight:600;font-size:14px;display:block')}>{t}</span>
-                  <span style={st('color:rgba(242,245,250,0.5);font-size:13px;line-height:1.5')}>{d}</span>
+            <div style={st('position:relative')}>
+              <div style={st('position:relative;border:1px solid rgba(255,255,255,0.09);border-radius:20px;background:#0b0c0f;padding:clamp(18px,2.2vw,24px);overflow:hidden')}>
+                <span style={st('position:absolute;top:-30%;right:-10%;width:70%;height:120%;background:radial-gradient(50% 50% at 50% 50%,rgba(0,125,220,0.14),rgba(5,5,6,0) 70%);pointer-events:none')}></span>
+                <div style={st('position:relative;display:flex;align-items:center;gap:12px;border:1px solid rgba(0,186,235,0.4);border-radius:14px;padding:16px 18px;background:rgba(0,186,235,0.06)')}>
+                  <span style={st(`width:24px;height:24px;border:1.5px solid ${ACCENT};display:grid;place-items:center;border-radius:6px;flex:none`)}><span style={st(`width:8px;height:8px;background:${ACCENT};border-radius:2px`)}></span></span>
+                  <span style={st('font-family:Funnel Display,sans-serif;font-weight:600;font-size:15px')}>SechPoint Group</span>
+                  <span style={st('margin-left:auto;font:500 11px IBM Plex Mono,monospace;letter-spacing:0.06em;color:rgba(242,245,250,0.45)')}>EST. 2020 · DUBAI</span>
                 </div>
-              ))}
+                <div style={st('position:relative;display:flex;justify-content:center;margin:2px 0')}><span style={st('width:1px;height:22px;background:linear-gradient(180deg,rgba(0,186,235,0.6),rgba(255,255,255,0.08))')}></span></div>
+                <div style={st('position:relative;display:grid;grid-template-columns:1fr 1fr;gap:12px')}>
+                  {ECO.map((e) => (
+                    <a key={e.short} href={e.url} target="_blank" rel="noopener" aria-label={'Visit SechPoint ' + e.short} className="sp-card" style={st('position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:16px 16px 15px;background:rgba(255,255,255,0.02);display:flex;flex-direction:column;gap:7px;text-decoration:none;color:inherit')}>
+                      <span style={st('position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#007ddc,#01f1f8)')}></span>
+                      <span style={st('display:flex;align-items:center;justify-content:space-between')}>
+                        <span aria-hidden="true" style={st(`width:7px;height:7px;border-radius:50%;background:${ACCENT}`)}></span>
+                        <span style={st('font:500 10.5px IBM Plex Mono,monospace;letter-spacing:0.14em;color:rgba(242,245,250,0.4)')}>{e.n}</span>
+                      </span>
+                      <span style={st('font-family:Funnel Display,sans-serif;font-weight:600;font-size:15px;color:#f2f5fa')}>{e.short}</span>
+                      <span style={st('color:rgba(242,245,250,0.5);font-size:12.5px;line-height:1.45')}>{e.tag}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -111,6 +128,7 @@ export default function Home() {
             <div style={st('display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 440px), 1fr));gap:20px;margin-top:44px')}>
               {BIZ.map((b) => (
                 <a key={b.n} href={b.url} aria-label={'Visit ' + b.name} className="sp-card" style={st('border:1px solid rgba(255,255,255,0.1);border-radius:16px;background:#0d0e11;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:16px;text-decoration:none;color:inherit;cursor:pointer')}>
+                  <ImagePlaceholder ratio="16 / 9" label={b.name.replace('SechPoint ', '') + ' visual'} note="1600×900" style={{ borderRadius: '12px' }} />
                   <div style={st('display:flex;align-items:center;gap:10px')}>
                     <span aria-hidden="true" style={st(`width:8px;height:8px;border-radius:50%;background:${ACCENT}`)}></span>
                     <span style={st('color:rgba(242,245,250,0.42);font-size:12px;letter-spacing:0.14em;text-transform:uppercase')}>{b.n}</span>
@@ -151,13 +169,16 @@ export default function Home() {
           <div style={st('max-width:1180px;margin:0 auto;padding:clamp(64px,8vw,110px) 24px')}>
             <p style={eyebrow}>Why SechPoint</p>
             <h2 style={{ ...h2, maxWidth: '22ch', textWrap: 'balance' }}>Global Technology. Regional Expertise. Local Execution.</h2>
-            <ul style={st('margin:44px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill, minmax(min(100%, 330px), 1fr));gap:14px 40px')}>
-              {WHY.map((w, i) => (
-                <li key={w} style={st('display:flex;gap:14px;align-items:baseline;color:rgba(242,245,250,0.9);font-size:16.5px;line-height:1.6;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.07)')}>
-                  <span aria-hidden="true" style={st(`color:${ACCENT};font-family:Funnel Display,sans-serif;font-weight:600;font-size:13px`)}>{'0' + (i + 1)}</span>{w}
-                </li>
-              ))}
-            </ul>
+            <div style={st('margin:44px 0 0;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr));gap:clamp(32px,4vw,64px);align-items:center')}>
+              <ul style={st('margin:0;padding:0;list-style:none;display:flex;flex-direction:column')}>
+                {WHY.map((w, i) => (
+                  <li key={w} style={st('display:flex;gap:14px;align-items:baseline;color:rgba(242,245,250,0.9);font-size:16.5px;line-height:1.6;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.07)')}>
+                    <span aria-hidden="true" style={st(`color:${ACCENT};font-family:Funnel Display,sans-serif;font-weight:600;font-size:13px`)}>{'0' + (i + 1)}</span>{w}
+                  </li>
+                ))}
+              </ul>
+              <ImagePlaceholder ratio="4 / 5" label="Why SechPoint image" note="Team, operations or delivery visual — 1200×1500" />
+            </div>
           </div>
         </section>
 
@@ -169,7 +190,8 @@ export default function Home() {
               <h2 style={{ ...h2, textWrap: 'balance' }}>Supporting Digital Growth Across High-Potential Markets</h2>
               <p style={st('margin:24px 0 0;color:rgba(242,245,250,0.62);font-size:17px;line-height:1.7;text-wrap:pretty')}>SechPoint supports customers and partners across the Middle East, Africa and Asia. Our regional presence helps us understand local priorities and deliver solutions aligned with business, operational and regulatory requirements.</p>
             </div>
-            <div role="img" aria-label="SechPoint operates across three regions: the Middle East, Africa and Asia" style={st('display:flex;flex-direction:column;gap:12px')}>
+            <div style={st('display:flex;flex-direction:column;gap:12px')}>
+              <ImagePlaceholder ratio="16 / 9" label="Regional map" note="Middle East · Africa · Asia — map or presence graphic, 1600×900" style={{ marginBottom: '4px' }} />
               {REGIONS.map((r) => (
                 <div key={r} className="sp-cardline" style={st('border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:24px 26px;background:rgba(255,255,255,0.02);display:flex;align-items:center;gap:16px')}>
                   <span aria-hidden="true" style={st(`width:10px;height:10px;border-radius:50%;background:${ACCENT};flex:none`)}></span>
