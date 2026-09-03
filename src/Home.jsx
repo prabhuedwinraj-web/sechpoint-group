@@ -11,7 +11,7 @@ const BIZ = [
   { n: '02', name: 'SechPoint Distribution', sub: "Cybersecurity Distribution for Africa's Digital Growth", url: 'https://distribution.sechpoint.com',
     desc: 'SechPoint Distribution connects global cybersecurity and technology vendors with partners and customers across Africa through market development, channel enablement and local technical expertise.',
     items: ['Cybersecurity and technology distribution', 'Vendor market development', 'Channel recruitment and enablement', 'Pre-sales and technical support', 'Training and professional services'] },
-  { n: '03', name: 'SechPoint SSIT', sub: 'Cybersecurity and Systems Integration', url: 'https://ssit.sechpoint.com',
+  { n: '03', name: 'SechPoint SSIT', sub: 'Cybersecurity and Systems Integration', url: 'https://ssit-theta.vercel.app/',
     desc: 'SechPoint SSIT helps organisations strengthen cyber resilience, modernise technology environments and integrate security, infrastructure and operational capabilities around business priorities.',
     items: ['Cyber defence and security operations', 'Identity and access security', 'Application and API security', 'Data, cloud and AI security', 'Managed security services', 'Systems integration and professional services'] },
   { n: '04', name: 'SechPoint ICT', sub: 'Integrated Technology and Infrastructure Solutions', url: 'https://ict.sechpoint.com',
@@ -47,10 +47,6 @@ const eyebrow = st(`margin:0 0 14px;color:${ACCENT};font:500 12px IBM Plex Mono,
 const h2 = st('margin:0;font-family:Funnel Display,sans-serif;font-weight:600;font-size:clamp(26px,3.2vw,40px);line-height:1.15;letter-spacing:-0.015em')
 
 export default function Home() {
-  // Sibling business sites live on their own subdomains in production; in local
-  // dev, point the SSIT card at the running SSIT app so the link works now.
-  const isLocal = typeof window !== 'undefined' && /^(localhost|127\.|0\.0\.0\.0)/.test(window.location.hostname)
-  const hrefFor = (b) => (b.name === 'SechPoint SSIT' && isLocal) ? 'http://localhost:5180/' : b.url
   return (
     <>
       <Header page="home" />
@@ -114,7 +110,7 @@ export default function Home() {
             <p style={st('margin:20px 0 0;color:rgba(242,245,250,0.62);font-size:17px;line-height:1.65;max-width:620px;text-wrap:pretty')}>SechPoint Group operates through four specialised businesses. Each entity has a clear focus, dedicated capabilities and its own website.</p>
             <div style={st('display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 440px), 1fr));gap:20px;margin-top:44px')}>
               {BIZ.map((b) => (
-                <a key={b.n} href={hrefFor(b)} aria-label={'Visit ' + b.name} className="sp-card" style={st('border:1px solid rgba(255,255,255,0.1);border-radius:16px;background:#0d0e11;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:16px;text-decoration:none;color:inherit;cursor:pointer')}>
+                <a key={b.n} href={b.url} aria-label={'Visit ' + b.name} className="sp-card" style={st('border:1px solid rgba(255,255,255,0.1);border-radius:16px;background:#0d0e11;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:16px;text-decoration:none;color:inherit;cursor:pointer')}>
                   <div style={st('display:flex;align-items:center;gap:10px')}>
                     <span aria-hidden="true" style={st(`width:8px;height:8px;border-radius:50%;background:${ACCENT}`)}></span>
                     <span style={st('color:rgba(242,245,250,0.42);font-size:12px;letter-spacing:0.14em;text-transform:uppercase')}>{b.n}</span>

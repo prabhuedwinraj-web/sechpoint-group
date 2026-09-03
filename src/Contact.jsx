@@ -20,7 +20,7 @@ const COUNTRIES = ['Afghanistan', 'Albania', 'Algeria', 'Angola', 'Argentina', '
 const DIRECTORY = [
   { name: 'SechPoint DPI', desc: 'Digital public infrastructure, digital identity and government platforms', url: 'https://dpi.sechpoint.com' },
   { name: 'SechPoint Distribution', desc: 'Cybersecurity distribution, vendor and channel partnerships across Africa', url: 'https://distribution.sechpoint.com' },
-  { name: 'SechPoint SSIT', desc: 'Cybersecurity, managed services and systems integration', url: 'https://ssit.sechpoint.com' },
+  { name: 'SechPoint SSIT', desc: 'Cybersecurity, managed services and systems integration', url: 'https://ssit-theta.vercel.app/' },
   { name: 'SechPoint ICT', desc: 'ICT infrastructure, cloud, networking and enterprise technology', url: 'https://ict.sechpoint.com' },
 ]
 
