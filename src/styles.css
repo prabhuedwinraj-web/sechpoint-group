@@ -23,6 +23,15 @@ input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
 
+/* CTA globe: stack + center under ~860px, and cap the globe so it never dwarfs the copy */
+@media (max-width: 860px) {
+  .sp-cta-globe { grid-template-columns: 1fr !important; text-align: center; }
+  .sp-cta-globe .sp-cta-copy h2,
+  .sp-cta-globe .sp-cta-copy p { margin-left: auto; margin-right: auto; }
+  .sp-cta-globe .sp-cta-copy > div { justify-content: center; }
+  .sp-cta-globe .sp-cta-visual { order: -1; max-width: 360px; margin: 0 auto; aspect-ratio: 1 / 1; }
+}
+
 /* ---- Hover / focus states (ported from DC style-hover/style-focus) ---- */
 .sp-navlink { transition: color .2s ease, background .2s ease; }
 .sp-navlink:hover { color: #f2f5fa !important; background: rgba(255,255,255,0.06); }
