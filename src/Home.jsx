@@ -167,7 +167,7 @@ export default function Home() {
 
         {/* WHY SECHPOINT */}
         <section style={st('background:#0b0c0f;border-bottom:1px solid rgba(255,255,255,0.07)')}>
-          <div style={st('max-width:1180px;margin:0 auto;padding:clamp(64px,8vw,110px) 24px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 360px), 1fr));gap:clamp(36px,5vw,72px);align-items:start')}>
+          <div style={st('max-width:1180px;margin:0 auto;padding:clamp(64px,8vw,110px) 24px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 360px), 1fr));gap:clamp(36px,5vw,72px);align-items:stretch')}>
             <div>
               <p style={eyebrow}>Why SechPoint</p>
               <h2 style={{ ...h2, maxWidth: '16ch', textWrap: 'balance' }}>Global Technology. Regional Expertise. Local Execution.</h2>
@@ -179,7 +179,9 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-            <img src="/assets/why-sechpoint.jpg" alt="Software engineer analysing code across multiple displays" width="1254" height="836" loading="lazy" style={st('position:sticky;top:100px;width:100%;aspect-ratio:4 / 5;object-fit:cover;object-position:center;border-radius:16px;border:1px solid rgba(255,255,255,0.1);display:block')} />
+            <div className="why-media" style={st('position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.1)')}>
+              <img src="/assets/why-sechpoint.jpg" alt="Software engineer analysing code across multiple displays" width="1254" height="836" loading="lazy" style={st('position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block')} />
+            </div>
           </div>
         </section>
 

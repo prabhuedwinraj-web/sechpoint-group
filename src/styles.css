@@ -23,6 +23,12 @@ input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
 
+/* Why SechPoint media: portrait ratio when stacked, match the text-column height side-by-side */
+.why-media { aspect-ratio: 4 / 5; }
+@media (min-width: 828px) {
+  .why-media { aspect-ratio: auto; height: 100%; min-height: 420px; }
+}
+
 /* CTA globe: stack + center under ~860px, and cap the globe so it never dwarfs the copy */
 @media (max-width: 860px) {
   .sp-cta-globe { grid-template-columns: 1fr !important; text-align: center; }
