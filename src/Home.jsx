@@ -179,7 +179,7 @@ export default function Home() {
                 ))}
               </ul>
             </div>
-            <ImagePlaceholder ratio="4 / 5" label="Why SechPoint image" note="Team, operations or delivery visual — 1200×1500" style={{ position: 'sticky', top: '100px' }} />
+            <img src="/assets/why-sechpoint.jpg" alt="Software engineer analysing code across multiple displays" width="1254" height="836" loading="lazy" style={st('position:sticky;top:100px;width:100%;aspect-ratio:4 / 5;object-fit:cover;object-position:center;border-radius:16px;border:1px solid rgba(255,255,255,0.1);display:block')} />
           </div>
         </section>
 
