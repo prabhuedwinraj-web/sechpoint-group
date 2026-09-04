@@ -1,7 +1,7 @@
 import React from 'react'
 import { st, ACCENT } from './ui.js'
 import { Link } from './router.jsx'
-import { Header, Footer, ImagePlaceholder } from './Shared.jsx'
+import { Header, Footer } from './Shared.jsx'
 import SechPointField from './hero-field.jsx'
 import Globe from './Globe.jsx'
 
@@ -129,7 +129,6 @@ export default function Home() {
             <div style={st('display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 440px), 1fr));gap:20px;margin-top:44px')}>
               {BIZ.map((b) => (
                 <a key={b.n} href={b.url} aria-label={'Visit ' + b.name} className="sp-card-light" style={st('border:1px solid rgba(10,25,50,0.1);border-radius:16px;background:#ffffff;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:16px;text-decoration:none;color:inherit;cursor:pointer;box-shadow:0 1px 2px rgba(10,25,50,0.04)')}>
-                  <ImagePlaceholder ratio="16 / 9" label={b.name.replace('SechPoint ', '') + ' visual'} note="1600×900" light style={{ borderRadius: '12px' }} />
                   <div style={st('display:flex;align-items:center;gap:10px')}>
                     <span aria-hidden="true" style={st('width:8px;height:8px;border-radius:50%;background:#0072c6')}></span>
                     <span style={st('color:rgba(10,20,36,0.5);font-size:12px;letter-spacing:0.14em;text-transform:uppercase')}>{b.n}</span>
