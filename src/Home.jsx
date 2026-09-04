@@ -167,19 +167,19 @@ export default function Home() {
 
         {/* WHY SECHPOINT */}
         <section style={st('background:#0b0c0f;border-bottom:1px solid rgba(255,255,255,0.07)')}>
-          <div style={st('max-width:1180px;margin:0 auto;padding:clamp(64px,8vw,110px) 24px')}>
-            <p style={eyebrow}>Why SechPoint</p>
-            <h2 style={{ ...h2, maxWidth: '22ch', textWrap: 'balance' }}>Global Technology. Regional Expertise. Local Execution.</h2>
-            <div style={st('margin:44px 0 0;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr));gap:clamp(32px,4vw,64px);align-items:center')}>
-              <ul style={st('margin:0;padding:0;list-style:none;display:flex;flex-direction:column')}>
+          <div style={st('max-width:1180px;margin:0 auto;padding:clamp(64px,8vw,110px) 24px;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 360px), 1fr));gap:clamp(36px,5vw,72px);align-items:start')}>
+            <div>
+              <p style={eyebrow}>Why SechPoint</p>
+              <h2 style={{ ...h2, maxWidth: '16ch', textWrap: 'balance' }}>Global Technology. Regional Expertise. Local Execution.</h2>
+              <ul style={st('margin:36px 0 0;padding:0;list-style:none;display:flex;flex-direction:column')}>
                 {WHY.map((w, i) => (
                   <li key={w} style={st('display:flex;gap:14px;align-items:baseline;color:rgba(242,245,250,0.9);font-size:16.5px;line-height:1.6;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.07)')}>
                     <span aria-hidden="true" style={st(`color:${ACCENT};font-family:Funnel Display,sans-serif;font-weight:600;font-size:13px`)}>{'0' + (i + 1)}</span>{w}
                   </li>
                 ))}
               </ul>
-              <ImagePlaceholder ratio="4 / 5" label="Why SechPoint image" note="Team, operations or delivery visual — 1200×1500" />
             </div>
+            <ImagePlaceholder ratio="4 / 5" label="Why SechPoint image" note="Team, operations or delivery visual — 1200×1500" style={{ position: 'sticky', top: '100px' }} />
           </div>
         </section>
 
