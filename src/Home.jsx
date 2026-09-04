@@ -191,7 +191,6 @@ export default function Home() {
               <p style={st('margin:24px 0 0;color:rgba(242,245,250,0.62);font-size:17px;line-height:1.7;text-wrap:pretty')}>SechPoint supports customers and partners across the Middle East, Africa and Asia. Our regional presence helps us understand local priorities and deliver solutions aligned with business, operational and regulatory requirements.</p>
             </div>
             <div style={st('display:flex;flex-direction:column;gap:12px')}>
-              <ImagePlaceholder ratio="16 / 9" label="Regional map" note="Middle East · Africa · Asia — map or presence graphic, 1600×900" style={{ marginBottom: '4px' }} />
               {REGIONS.map((r) => (
                 <div key={r} className="sp-cardline" style={st('border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:24px 26px;background:rgba(255,255,255,0.02);display:flex;align-items:center;gap:16px')}>
                   <span aria-hidden="true" style={st(`width:10px;height:10px;border-radius:50%;background:${ACCENT};flex:none`)}></span>
