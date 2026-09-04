@@ -38,6 +38,13 @@ input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px
   .sp-cta-globe .sp-cta-visual { order: -1; max-width: 360px; margin: 0 auto; aspect-ratio: 1 / 1; }
 }
 
+/* Full-width action buttons on phones */
+@media (max-width: 560px) {
+  .sp-actions { flex-direction: column; align-items: stretch; }
+  .sp-actions .sp-btn-accent,
+  .sp-actions .sp-btn-outline { width: 100%; justify-content: center; text-align: center; }
+}
+
 /* ---- Hover / focus states (ported from DC style-hover/style-focus) ---- */
 .sp-navlink { transition: color .2s ease, background .2s ease; }
 .sp-navlink:hover { color: #f2f5fa !important; background: rgba(255,255,255,0.06); }

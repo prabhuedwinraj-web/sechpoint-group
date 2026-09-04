@@ -75,7 +75,7 @@ export default function Home() {
               <p style={st('margin:26px 0 0;color:rgba(242,245,250,0.62);font-size:clamp(16px,1.5vw,19px);line-height:1.65;text-wrap:pretty')}>SechPoint is a diversified technology group delivering digital public infrastructure, cybersecurity, technology distribution, systems integration and enterprise ICT solutions across the Middle East, Africa and Asia.</p>
               <p style={st('margin:16px 0 0;color:rgba(242,245,250,0.62);font-size:clamp(16px,1.5vw,19px);line-height:1.65;text-wrap:pretty')}>Through four specialised businesses, we help governments, enterprises, technology vendors and partners build secure, connected and future-ready digital environments.</p>
             </div>
-            <div style={st('display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;animation:spFadeUp 0.6s ease 0.18s both')}>
+            <div className="sp-actions" style={st('display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;animation:spFadeUp 0.6s ease 0.18s both')}>
               <a href="#businesses" className="sp-btn-accent" style={st(`background:${ACCENT};color:#050506;font-weight:600;font-size:16px;padding:14px 26px;border-radius:10px;min-height:44px;display:inline-flex;align-items:center`)}>Explore Our Businesses</a>
               <Link to="/contact" className="sp-btn-outline" style={st('border:1px solid rgba(255,255,255,0.22);color:#f2f5fa;font-weight:600;font-size:16px;padding:14px 26px;border-radius:10px;min-height:44px;display:inline-flex;align-items:center')}>Contact SechPoint</Link>
             </div>
@@ -213,7 +213,7 @@ export default function Home() {
                 <p style={st(`margin:0 0 16px;color:${ACCENT};font:500 12px IBM Plex Mono,monospace;letter-spacing:0.2em;text-transform:uppercase`)}>One Group, Four Specialists</p>
                 <h2 style={{ ...h2, margin: 0, fontSize: 'clamp(26px,3.2vw,40px)', lineHeight: 1.14, maxWidth: '18ch', textWrap: 'balance' }}>Connect With the Right SechPoint Business</h2>
                 <p style={st('margin:20px 0 0;color:rgba(242,245,250,0.62);font-size:17px;line-height:1.65;max-width:520px;text-wrap:pretty')}>Whether you require digital public infrastructure, cybersecurity distribution, systems integration or enterprise ICT solutions, we will connect you with the appropriate SechPoint team.</p>
-                <div style={st('display:flex;flex-wrap:wrap;gap:14px;margin-top:32px')}>
+                <div className="sp-actions" style={st('display:flex;flex-wrap:wrap;gap:14px;margin-top:32px')}>
                   <a href="#businesses" className="sp-btn-accent" style={st(`background:${ACCENT};color:#050506;font-weight:600;font-size:16px;padding:14px 26px;border-radius:10px;min-height:44px;display:inline-flex;align-items:center`)}>Explore Our Businesses</a>
                   <Link to="/contact" className="sp-btn-outline" style={st('border:1px solid rgba(255,255,255,0.22);color:#f2f5fa;font-weight:600;font-size:16px;padding:14px 26px;border-radius:10px;min-height:44px;display:inline-flex;align-items:center')}>Contact Us</Link>
                 </div>

@@ -191,7 +191,7 @@ export default function Contact() {
                     </label>
                     {errors.consent && <p style={st('margin:0 0 0 31px;color:#F2A0A0;font-size:13.5px')}>⚠ {errors.consent}</p>}
                   </div>
-                  <div style={st('grid-column:1 / -1;display:flex;flex-wrap:wrap;align-items:center;gap:16px')}>
+                  <div className="sp-actions" style={st('grid-column:1 / -1;display:flex;flex-wrap:wrap;align-items:center;gap:16px')}>
                     <button type="submit" disabled={submitting} className="sp-btn-accent" style={st(`background:${ACCENT};color:#050506;font-weight:600;font-size:16px;padding:14px 30px;border-radius:10px;border:none;cursor:pointer;font-family:inherit;min-height:48px;display:inline-flex;align-items:center;gap:10px;opacity:${submitting ? 0.7 : 1}`)}>
                       {submitting && <span aria-hidden="true" style={st('width:15px;height:15px;border:2px solid rgba(0,0,0,0.35);border-top-color:#050506;border-radius:50%;display:inline-block;animation:spSpin 0.7s linear infinite')}></span>}
                       {submitting ? 'Submitting…' : 'Submit Enquiry'}
