@@ -3,27 +3,30 @@ import { st, ACCENT, LOGO, BUSINESSES } from './ui.js'
 import { Link } from './router.jsx'
 
 // Marked slot for a real image to be dropped in later.
-export function ImagePlaceholder({ ratio = '16 / 10', label = 'Image placeholder', note, style }) {
+export function ImagePlaceholder({ ratio = '16 / 10', label = 'Image placeholder', note, style, light = false }) {
+  const stroke = light ? '#0072c6' : '#00baeb'
   return (
     <div
       role="img"
       aria-label={label + (note ? ' — ' + note : '')}
       style={{
         position: 'relative', width: '100%', aspectRatio: ratio,
-        border: '1px dashed rgba(0,186,235,0.4)', borderRadius: '16px',
-        background: 'repeating-linear-gradient(135deg, rgba(0,186,235,0.05) 0 10px, transparent 10px 20px)',
+        border: light ? '1px dashed rgba(0,114,198,0.35)' : '1px dashed rgba(0,186,235,0.4)', borderRadius: '16px',
+        background: light
+          ? 'repeating-linear-gradient(135deg, rgba(0,114,198,0.05) 0 10px, transparent 10px 20px)'
+          : 'repeating-linear-gradient(135deg, rgba(0,186,235,0.05) 0 10px, transparent 10px 20px)',
         display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
         gap: '10px', textAlign: 'center', padding: '24px', overflow: 'hidden', ...style,
       }}
     >
-      <span style={{ position: 'absolute', inset: 0, background: 'radial-gradient(60% 60% at 50% 40%, rgba(0,125,220,0.12), transparent 70%)', pointerEvents: 'none' }} />
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00baeb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ position: 'relative' }}>
+      <span style={{ position: 'absolute', inset: 0, background: light ? 'radial-gradient(60% 60% at 50% 40%, rgba(0,114,198,0.09), transparent 70%)' : 'radial-gradient(60% 60% at 50% 40%, rgba(0,125,220,0.12), transparent 70%)', pointerEvents: 'none' }} />
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke={stroke} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ position: 'relative' }}>
         <rect x="3" y="4" width="18" height="16" rx="2" />
         <circle cx="8.5" cy="9.5" r="1.6" />
         <path d="M21 16l-5-5-9 9" />
       </svg>
-      <span style={st("position:relative;font:500 12px IBM Plex Mono,monospace;letter-spacing:0.14em;text-transform:uppercase;color:#00baeb")}>{label}</span>
-      {note && <span style={st('position:relative;font-size:12.5px;line-height:1.45;color:rgba(242,245,250,0.45);max-width:260px')}>{note}</span>}
+      <span style={st(`position:relative;font:500 12px IBM Plex Mono,monospace;letter-spacing:0.14em;text-transform:uppercase;color:${stroke}`)}>{label}</span>
+      {note && <span style={st(`position:relative;font-size:12.5px;line-height:1.45;color:${light ? 'rgba(5,15,35,0.42)' : 'rgba(242,245,250,0.45)'};max-width:260px`)}>{note}</span>}
     </div>
   )
 }

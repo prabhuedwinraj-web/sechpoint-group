@@ -120,30 +120,30 @@ export default function Home() {
         </section>
 
         {/* BUSINESSES */}
-        <section id="businesses" style={st('background:#0b0c0f;border-bottom:1px solid rgba(255,255,255,0.07)')}>
+        <section id="businesses" style={st('background:#eef1f6;border-bottom:1px solid rgba(5,15,35,0.08)')}>
           <div style={st('max-width:1180px;margin:0 auto;padding:clamp(64px,8vw,110px) 24px')}>
-            <p style={eyebrow}>Our Businesses</p>
-            <h2 style={h2}>Our Business Entities</h2>
-            <p style={st('margin:20px 0 0;color:rgba(242,245,250,0.62);font-size:17px;line-height:1.65;max-width:620px;text-wrap:pretty')}>SechPoint Group operates through four specialised businesses. Each entity has a clear focus, dedicated capabilities and its own website.</p>
+            <p style={st('margin:0 0 14px;color:#0072c6;font:500 12px IBM Plex Mono,monospace;letter-spacing:0.2em;text-transform:uppercase')}>Our Businesses</p>
+            <h2 style={{ ...h2, color: '#0a1424' }}>Our Business Entities</h2>
+            <p style={st('margin:20px 0 0;color:rgba(10,20,36,0.66);font-size:17px;line-height:1.65;max-width:620px;text-wrap:pretty')}>SechPoint Group operates through four specialised businesses. Each entity has a clear focus, dedicated capabilities and its own website.</p>
             <div style={st('display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 440px), 1fr));gap:20px;margin-top:44px')}>
               {BIZ.map((b) => (
-                <a key={b.n} href={b.url} aria-label={'Visit ' + b.name} className="sp-card" style={st('border:1px solid rgba(255,255,255,0.1);border-radius:16px;background:#0d0e11;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:16px;text-decoration:none;color:inherit;cursor:pointer')}>
-                  <ImagePlaceholder ratio="16 / 9" label={b.name.replace('SechPoint ', '') + ' visual'} note="1600×900" style={{ borderRadius: '12px' }} />
+                <a key={b.n} href={b.url} aria-label={'Visit ' + b.name} className="sp-card-light" style={st('border:1px solid rgba(10,25,50,0.1);border-radius:16px;background:#ffffff;padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:16px;text-decoration:none;color:inherit;cursor:pointer;box-shadow:0 1px 2px rgba(10,25,50,0.04)')}>
+                  <ImagePlaceholder ratio="16 / 9" label={b.name.replace('SechPoint ', '') + ' visual'} note="1600×900" light style={{ borderRadius: '12px' }} />
                   <div style={st('display:flex;align-items:center;gap:10px')}>
-                    <span aria-hidden="true" style={st(`width:8px;height:8px;border-radius:50%;background:${ACCENT}`)}></span>
-                    <span style={st('color:rgba(242,245,250,0.42);font-size:12px;letter-spacing:0.14em;text-transform:uppercase')}>{b.n}</span>
+                    <span aria-hidden="true" style={st('width:8px;height:8px;border-radius:50%;background:#0072c6')}></span>
+                    <span style={st('color:rgba(10,20,36,0.5);font-size:12px;letter-spacing:0.14em;text-transform:uppercase')}>{b.n}</span>
                   </div>
                   <div>
-                    <h3 style={st('margin:0;font-family:Funnel Display,sans-serif;font-weight:600;font-size:22px;color:#f2f5fa')}>{b.name}</h3>
-                    <p style={st(`margin:6px 0 0;color:${ACCENT};font-size:14px;font-weight:600;letter-spacing:0.02em`)}>{b.sub}</p>
+                    <h3 style={st('margin:0;font-family:Funnel Display,sans-serif;font-weight:600;font-size:22px;color:#0a1424')}>{b.name}</h3>
+                    <p style={st('margin:6px 0 0;color:#0072c6;font-size:14px;font-weight:600;letter-spacing:0.02em')}>{b.sub}</p>
                   </div>
-                  <p style={st('margin:0;color:rgba(242,245,250,0.62);font-size:15.5px;line-height:1.65;text-wrap:pretty')}>{b.desc}</p>
-                  <ul style={st('margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;color:rgba(242,245,250,0.66);font-size:14.5px')}>
+                  <p style={st('margin:0;color:rgba(10,20,36,0.68);font-size:15.5px;line-height:1.65;text-wrap:pretty')}>{b.desc}</p>
+                  <ul style={st('margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;color:rgba(10,20,36,0.72);font-size:14.5px')}>
                     {b.items.map((it) => (
-                      <li key={it} style={st('display:flex;gap:10px;align-items:baseline')}><span aria-hidden="true" style={st(`color:${ACCENT};font-size:11px`)}>◆</span>{it}</li>
+                      <li key={it} style={st('display:flex;gap:10px;align-items:baseline')}><span aria-hidden="true" style={st('color:#0072c6;font-size:11px')}>◆</span>{it}</li>
                     ))}
                   </ul>
-                  <span className="sp-ghost" style={st(`margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(0,186,235,0.55);color:${ACCENT};font-weight:600;font-size:15px;padding:11px 20px;border-radius:9px;min-height:44px`)}>Visit {b.name} <span aria-hidden="true">↗</span></span>
+                  <span className="sp-ghost-light" style={st('margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(0,114,198,0.5);color:#0072c6;font-weight:600;font-size:15px;padding:11px 20px;border-radius:9px;min-height:44px')}>Visit {b.name} <span aria-hidden="true">↗</span></span>
                 </a>
               ))}
             </div>
