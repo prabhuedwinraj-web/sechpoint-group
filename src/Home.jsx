@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faIdCard, faShieldHalved, faUserLock, faLock, faCode, faCloud, faNetworkWired, faDiagramProject, faServer, faBoxesStacked, faHeadset } from '@fortawesome/free-solid-svg-icons'
 import { st, ACCENT } from './ui.js'
 import { Link } from './router.jsx'
 import { Header, Footer } from './Shared.jsx'
@@ -28,17 +30,17 @@ const BIZ = [
 ]
 
 const CAPS = [
-  'Digital public infrastructure and digital identity',
-  'Cybersecurity and cyber defence',
-  'Identity and access security',
-  'Data protection and privacy',
-  'Application and API security',
-  'Cloud and artificial-intelligence security',
-  'Network and infrastructure security',
-  'Systems integration',
-  'Enterprise ICT infrastructure',
-  'Technology distribution',
-  'Professional and managed services',
+  { label: 'Digital public infrastructure and digital identity', icon: faIdCard },
+  { label: 'Cybersecurity and cyber defence', icon: faShieldHalved },
+  { label: 'Identity and access security', icon: faUserLock },
+  { label: 'Data protection and privacy', icon: faLock },
+  { label: 'Application and API security', icon: faCode },
+  { label: 'Cloud and artificial-intelligence security', icon: faCloud },
+  { label: 'Network and infrastructure security', icon: faNetworkWired },
+  { label: 'Systems integration', icon: faDiagramProject },
+  { label: 'Enterprise ICT infrastructure', icon: faServer },
+  { label: 'Technology distribution', icon: faBoxesStacked },
+  { label: 'Professional and managed services', icon: faHeadset },
 ]
 
 const WHY = [
@@ -156,9 +158,14 @@ export default function Home() {
             <p style={eyebrow}>Group Technology Landscape</p>
             <h2 style={{ ...h2, maxWidth: '20ch', textWrap: 'balance' }}>Technology Built Around Business Priorities</h2>
             <p style={st('margin:20px 0 0;color:rgba(242,245,250,0.62);font-size:17px;line-height:1.65;max-width:620px;text-wrap:pretty')}>Across its specialised businesses, SechPoint supports transformation across the following capability areas:</p>
-            <ul style={st('margin:40px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill, minmax(min(100%, 280px), 1fr));gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden')}>
+            <ul style={st('margin:44px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill, minmax(min(100%, 300px), 1fr));gap:14px')}>
               {CAPS.map((c) => (
-                <li key={c} className="sp-cap" style={st('background:#0b0c0f;padding:20px 22px;font-size:15.5px;color:rgba(242,245,250,0.9);display:flex;gap:12px;align-items:baseline')}><span aria-hidden="true" style={st(`color:${ACCENT};font-size:10px`)}>●</span>{c}</li>
+                <li key={c.label} className="sp-capcard" style={st('background:#0d0e11;border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:22px 22px;display:flex;gap:15px;align-items:center')}>
+                  <span aria-hidden="true" style={st('flex:none;width:44px;height:44px;border-radius:11px;background:rgba(0,186,235,0.1);border:1px solid rgba(0,186,235,0.22);display:flex;align-items:center;justify-content:center')}>
+                    <FontAwesomeIcon icon={c.icon} style={{ fontSize: '18px', color: ACCENT }} />
+                  </span>
+                  <span style={st('font-size:15.5px;line-height:1.4;letter-spacing:-0.01em;color:rgba(242,245,250,0.92);font-weight:500')}>{c.label}</span>
+                </li>
               ))}
             </ul>
           </div>
