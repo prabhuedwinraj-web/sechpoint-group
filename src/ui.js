@@ -17,7 +17,7 @@ export const ACCENT = 'var(--sp-accent, #00baeb)'
 export const LOGO = 'assets/sechpoint-logo.svg'
 
 export const BUSINESSES = [
-  { name: 'SechPoint DPI', tag: 'Digital public infrastructure', url: 'https://dpi.sechpoint.com' },
+  { name: 'SechPoint DPI', tag: 'Digital public infrastructure', url: 'https://sp-others.vercel.app/' },
   { name: 'SechPoint Distribution', tag: 'Cybersecurity distribution for Africa', url: 'https://distribution.sechpoint.com' },
   { name: 'SechPoint SSIT', tag: 'Cybersecurity & systems integration', url: 'https://ssit-theta.vercel.app/' },
   { name: 'SechPoint ICT', tag: 'Enterprise technology & infrastructure', url: 'https://ict.sechpoint.com' },

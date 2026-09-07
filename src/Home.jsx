@@ -8,14 +8,14 @@ import SechPointField from './hero-field.jsx'
 import Globe from './Globe.jsx'
 
 const ECO = [
-  { n: '01', short: 'DPI', tag: 'Digital public infrastructure', url: 'https://dpi.sechpoint.com' },
+  { n: '01', short: 'DPI', tag: 'Digital public infrastructure', url: 'https://sp-others.vercel.app/' },
   { n: '02', short: 'Distribution', tag: 'Cybersecurity distribution', url: 'https://distribution.sechpoint.com' },
   { n: '03', short: 'SSIT', tag: 'Security & systems integration', url: 'https://ssit-theta.vercel.app/' },
   { n: '04', short: 'ICT', tag: 'Enterprise technology & infrastructure', url: 'https://ict.sechpoint.com' },
 ]
 
 const BIZ = [
-  { n: '01', name: 'SechPoint DPI', sub: 'Digital Public Infrastructure', url: 'https://dpi.sechpoint.com',
+  { n: '01', name: 'SechPoint DPI', sub: 'Digital Public Infrastructure', url: 'https://sp-others.vercel.app/',
     desc: 'SechPoint DPI delivers secure and scalable digital infrastructure that supports national transformation, trusted digital identity, connected government services and citizen-focused platforms.',
     items: ['Digital identity and trust services', 'Digital government platforms', 'Data exchange and interoperability', 'Digital payments enablement', 'Citizen and public-service platforms'] },
   { n: '02', name: 'SechPoint Distribution', sub: "Cybersecurity Distribution for Africa's Digital Growth", url: 'https://distribution.sechpoint.com',
