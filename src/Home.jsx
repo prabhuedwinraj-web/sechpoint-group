@@ -64,13 +64,13 @@ export default function Home() {
         <span id="top"></span>
 
         {/* HERO */}
-        <section style={st('position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,0.07);background:#050506;min-height:min(88vh, 860px);display:flex;align-items:flex-end')}>
+        <section style={st('position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,0.07);background:#050506;min-height:calc(100svh - 68px);display:flex;align-items:flex-end')}>
           <div aria-hidden="true" style={st('position:absolute;inset:0;overflow:hidden')}>
             <SechPointField accent="#00baeb" opacity={0.8} speed={0.5} fan={140} density="full" mouseFx cursorGlow={false} cursorRadius={250} />
           </div>
           <div aria-hidden="true" style={st('position:absolute;inset:0;background:linear-gradient(180deg, rgba(11,10,10,0.4) 0%, rgba(11,10,10,0) 34%, rgba(11,10,10,0.72) 74%, #050506 100%);pointer-events:none')}></div>
           <div aria-hidden="true" style={st('position:absolute;inset:0;background:linear-gradient(95deg, rgba(11,10,10,0.9) 0%, rgba(11,10,10,0.45) 44%, rgba(11,10,10,0) 80%);pointer-events:none')}></div>
-          <div style={st('position:relative;width:100%;max-width:1180px;margin:0 auto;padding:clamp(180px,26vw,320px) 24px clamp(56px,7vw,88px)')}>
+          <div style={st('position:relative;width:100%;max-width:1180px;margin:0 auto;padding:clamp(48px,8vw,110px) 24px clamp(56px,7vw,96px)')}>
             <p style={st(`margin:0 0 18px;color:${ACCENT};font:500 12px IBM Plex Mono,monospace;letter-spacing:0.2em;text-transform:uppercase;animation:spFadeUp 0.5s ease both`)}>SechPoint Group</p>
             <h1 style={st('margin:0;font-family:Funnel Display,sans-serif;font-weight:600;font-size:clamp(34px,5.4vw,64px);line-height:1.08;letter-spacing:-0.02em;max-width:15ch;text-wrap:balance;animation:spFadeUp 0.55s ease 0.05s both')}>Powering Secure Digital Transformation</h1>
             <div style={st('max-width:640px;animation:spFadeUp 0.6s ease 0.12s both')}>
